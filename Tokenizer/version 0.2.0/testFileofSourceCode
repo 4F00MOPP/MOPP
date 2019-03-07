@@ -1,0 +1,123 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class GreedyRace {
+    
+    static int[] minVal (int [] array){ //for returning greedy choice at each n step
+           
+        int minValue = array[0];
+        int index=0;
+           
+        for (int i=1;i<array.length;i++){
+            if (array[i]<minValue){
+                minValue = array[i];
+                index=i;
+            } 
+        }  
+        int minArr[]= {minValue,index};
+           
+        return minArr;
+    }
+    
+      public static void main(String[] args) throws FileNotFoundException, IOException  {
+        
+        FileInputStream  file_in = new FileInputStream("a1q3in.txt");//input
+        Scanner s  = new Scanner(file_in); //for reading ints
+        
+        FileWriter file_out = new FileWriter("Solution.txt"); //output file
+           
+        int numScen = s.nextInt();//stores number of scenarios
+ 
+        for (int d=0;d<numScen;d++){ //multiple scenarios
+
+            int n = s.nextInt(); //reading from file for scenario
+            int k = s.nextInt();
+
+            System.out.println("E:");
+            int e;
+            e=s.nextInt();
+            System.out.print(e+" ");
+       
+            System.out.println();
+            System.out.println("X:");
+            int x;
+            x=s.nextInt();
+            System.out.print(x+" ");
+
+            System.out.println();
+            System.out.println("T:");
+            int [] t= new int[n];
+           
+            for (int i=0;i<n-1;i++){        
+                t[i]=s.nextInt();                     
+                System.out.print(t[i]+" ");
+                System.out.println();
+            }
+            
+            System.out.println();
+            System.out.println("A:");
+            int [][] a= new int[n][k];
+            for (int i=0;i<n;i++){
+                for (int j=0;j<k;j++){
+                     a[i][j]=s.nextInt();
+                     System.out.print(a[i][j]+" ");
+                }
+                System.out.println();
+            }
+
+            int time=0;
+            int [] tempArr;
+            int [] path = new int [n];
+            
+            //find best choice to get to first stop
+            tempArr= minVal(a[0]);
+            time = e+tempArr[0];
+            path[0] = tempArr[1]; //stores path
+            
+            //find best choice for traversal to each stop from each previous stop
+            for(int i = 1; i < n; i++){ //each stop
+                  tempArr= minVal(a[i]);
+                  time = time + tempArr[0]+t[i-1];  
+                  path[i] = tempArr[1];
+            }
+
+            //find final time for exiting 
+            time = x+time;
+
+            //output
+            System.out.println();
+            System.out.println("Solution:");
+            System.out.print(time);
+            System.out.println();
+
+            System.out.print("Path:");
+
+            for (int i =0;i<path.length;i++){
+                System.out.print(path[i]+1); //+1 to make output 1 based
+                if (i<path.length-1){
+                    System.out.print(",");
+                }
+            }
+            System.out.println();
+
+            file_out.write('\n');//saving the checked answers            
+            file_out.write("Scenario "+Integer.toString(d+1)+":");
+            file_out.write('\n');//saving the checked answers
+            file_out.write("Minimum Time: "+Integer.toString(time));
+            file_out.write('\n');//saving the checked answers
+
+            file_out.write("Path: ");
+            for (int i =0;i<path.length;i++){
+                file_out.write(Integer.toString(path[i]+1)); //+1 to make output 1 based
+                if (i<path.length-1){
+                    file_out.write(",");
+                }
+            }  
+            file_out.flush();
+        }
+          file_out.close();
+    }//main   
+}//class
