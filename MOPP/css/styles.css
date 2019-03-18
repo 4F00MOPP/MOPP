@@ -1,0 +1,18 @@
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.formFields{
+text-align: center;
+}
+.logo img{
+    text-align: center;
+}
+input{
+    display: block;
+    text-align: center;
+}
