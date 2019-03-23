@@ -43,35 +43,35 @@ public class Tokens {
          
         
         //2D arrays of the form: int [][] aNumber;
-        {"(^|\\s+)\\bint\\b(\\[\\s*\\]\\s*)+\\s+\\w+;"          , ":NUM-ARRAY-DECLATATION::NUM-ARRAY::SEMICOLON:"}, //numeral type declarations;
-        {"(^|\\s+)\\bbyte\\b(\\[\\s*\\]\\s*)+\\s+\\w+;"         , ":NUM-ARRAY-DECLATATION::NUM-ARRAY::SEMICOLON:"}, //numeral type declarations;
-        {"(^|\\s+)\\bshort\\b(\\[\\s*\\]\\s*)+\\s+\\w+;"        , ":NUM-ARRAY-DECLATATION::NUM-ARRAY::SEMICOLON:"}, //numeral type declarations;
-        {"(^|\\s+)\\blong\\b(\\[\\s*\\]\\s*)+\\s+\\w+;"         , ":NUM-ARRAY-DECLATATION::NUM-ARRAY::SEMICOLON:"}, //numeral type declarations;
-        {"(^|\\s+)\\bdouble\\b(\\[\\s*\\]\\s*)+\\s+\\w+;"       , ":NUM-VAR-DECLATATION::NUM-ARRAY::SEMICOLON:"}, //numeral type declarations;
-        {"(^|\\s+)\\bfloat\\b(\\[\\s*\\]\\s*)+\\s+\\w+;"        , ":NUM-ARRAY-DECLATATION::NUM-ARRAY::SEMICOLON:"}, //numeral type declarations;
+        {"(^|\\s+)\\bint\\b(\\[\\s*\\]\\s*)+\\s+\\w+;"          , ":NUM-ARRAY-DECLARATION::NUM-ARRAY::SEMICOLON:"}, //numeral type declarations;
+        {"(^|\\s+)\\bbyte\\b(\\[\\s*\\]\\s*)+\\s+\\w+;"         , ":NUM-ARRAY-DECLARATION::NUM-ARRAY::SEMICOLON:"}, //numeral type declarations;
+        {"(^|\\s+)\\bshort\\b(\\[\\s*\\]\\s*)+\\s+\\w+;"        , ":NUM-ARRAY-DECLARATION::NUM-ARRAY::SEMICOLON:"}, //numeral type declarations;
+        {"(^|\\s+)\\blong\\b(\\[\\s*\\]\\s*)+\\s+\\w+;"         , ":NUM-ARRAY-DECLARATION::NUM-ARRAY::SEMICOLON:"}, //numeral type declarations;
+        {"(^|\\s+)\\bdouble\\b(\\[\\s*\\]\\s*)+\\s+\\w+;"       , ":NUM-VAR-DECLARATION::NUM-ARRAY::SEMICOLON:"}, //numeral type declarations;
+        {"(^|\\s+)\\bfloat\\b(\\[\\s*\\]\\s*)+\\s+\\w+;"        , ":NUM-ARRAY-DECLARATION::NUM-ARRAY::SEMICOLON:"}, //numeral type declarations;
         {"(^|\\s+)\\bString\\b(\\[\\s*\\]\\s*)+\\s+\\w+;"       , ":STRING-ARRAY-DECLARATION::STRING-ARRAY::SEMICOLON:"},//String dec;
         {"(^|\\s+)\\bchar\\b(\\[\\s*\\]\\s*)+\\s+\\w+;"         , ":CHAR-ARRAY-DECLARATION::STRING-ARRAY::SEMICOLON:"},//string dec;
         {"(^|\\s+)\\bboolean\\b(\\[\\s*\\]\\s*)+\\s+\\w+;"      , ":BOOLEAN-ARRAY-DECLARATION::BOOL-ARRAY::SEMICOLON:"},//boolean dec;
         
         
         // of the form: int aNumber;
-        {"(^|\\s+)\\bint\\b\\s+\\w+;"                           , ":NUM-VAR-DECLATATION::NUM-VAR::SEMICOLON:"}, //numeral type declarations;
-        {"(^|\\s+)\\bbyte\\b\\s+\\w+;"                          , ":NUM-VAR-DECLATATION::NUM-VAR::SEMICOLON:"}, //numeral type declarations;
-        {"(^|\\s+)\\bshort\\b\\s+\\w+;"                         , ":NUM-VAR-DECLATATION::NUM-VAR::SEMICOLON:"}, //numeral type declarations;
-        {"(^|\\s+)\\blong\\b\\s+\\w+;"                          , ":NUM-VAR-DECLATATION::NUM-VAR::SEMICOLON:"}, //numeral type declarations;
-        {"(^|\\s+)\\bdouble\\b\\s+\\w+;"                        , ":NUM-VAR-DECLATATION::NUM-VAR::SEMICOLON:"}, //numeral type declarations;
-        {"(^|\\s+)\\bfloat\\b\\s+\\w+;"                         , ":NUM-VAR-DECLATATION::NUM-VAR::SEMICOLON:"}, //numeral type declarations;
+        {"(^|\\s+)\\bint\\b\\s+\\w+;"                           , ":NUM-VAR-DECLARATION::NUM-VAR::SEMICOLON:"}, //numeral type declarations;
+        {"(^|\\s+)\\bbyte\\b\\s+\\w+;"                          , ":NUM-VAR-DECLARATION::NUM-VAR::SEMICOLON:"}, //numeral type declarations;
+        {"(^|\\s+)\\bshort\\b\\s+\\w+;"                         , ":NUM-VAR-DECLARATION::NUM-VAR::SEMICOLON:"}, //numeral type declarations;
+        {"(^|\\s+)\\blong\\b\\s+\\w+;"                          , ":NUM-VAR-DECLARATION::NUM-VAR::SEMICOLON:"}, //numeral type declarations;
+        {"(^|\\s+)\\bdouble\\b\\s+\\w+;"                        , ":NUM-VAR-DECLARATION::NUM-VAR::SEMICOLON:"}, //numeral type declarations;
+        {"(^|\\s+)\\bfloat\\b\\s+\\w+;"                         , ":NUM-VAR-DECLARATION::NUM-VAR::SEMICOLON:"}, //numeral type declarations;
         {"(^|\\s+)\\bString\\b\\s+\\w+;"                        , ":STRING-VAR-DECLARATION::STRING-VAR::SEMICOLON:"},//String dec;
         {"(^|\\s+)\\bchar\\b\\s+\\w+;"                          , ":CHAR-VAR-DECLARATION::STRING-VAR::SEMICOLON:"},//string dec;
         {"(^|\\s+)\\bboolean\\b\\s+\\w+;"                       , ":BOOLEAN-VAR-DECLARATION::BOOL-VAR::SEMICOLON:"},//boolean dec;
         
         // of the form: int
-        {"(^|\\s+)\\bint\\b\\s+"                                , ":NUM-VAR-DECLATATION:"}, //numeral type declarations;
-        {"(^|\\s+)\\bbyte\\b\\s+"                               , ":NUM-VAR-DECLATATION:"}, //numeral type declarations;
-        {"(^|\\s+)\\bshort\\b\\s+"                              , ":NUM-VAR-DECLATATION:"}, //numeral type declarations;
-        {"(^|\\s+)\\blong\\b\\s+"                               , ":NUM-VAR-DECLATATION:"}, //numeral type declarations;
-        {"(^|\\s+)\\bdouble\\b\\s+"                             , ":NUM-VAR-DECLATATION:"}, //numeral type declarations;
-        {"(^|\\s+)\\bfloat\\b\\s+"                              , ":NUM-VAR-DECLATATION:"}, //numeral type declarations;
+        {"(^|\\s+)\\bint\\b\\s+"                                , ":NUM-VAR-DECLARATION:"}, //numeral type declarations;
+        {"(^|\\s+)\\bbyte\\b\\s+"                               , ":NUM-VAR-DECLARATION:"}, //numeral type declarations;
+        {"(^|\\s+)\\bshort\\b\\s+"                              , ":NUM-VAR-DECLARATION:"}, //numeral type declarations;
+        {"(^|\\s+)\\blong\\b\\s+"                               , ":NUM-VAR-DECLARATION:"}, //numeral type declarations;
+        {"(^|\\s+)\\bdouble\\b\\s+"                             , ":NUM-VAR-DECLARATION:"}, //numeral type declarations;
+        {"(^|\\s+)\\bfloat\\b\\s+"                              , ":NUM-VAR-DECLARATION:"}, //numeral type declarations;
         {"(^|\\s+)\\bString\\b\\s+"                             , ":STRING-VAR-DECLARATION:"},//String dec;
         {"(^|\\s+)\\bchar\\b\\s+"                               , ":CHAR-VAR-DECLARATION:"},//string dec;
         {"(^|\\s+)\\bboolean\\b\\s+"                            , ":BOOLEAN-VAR-DECLARATION:"},//boolean dec;
