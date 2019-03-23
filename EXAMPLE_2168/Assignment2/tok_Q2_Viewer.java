@@ -1,0 +1,14 @@
+:importjava.awt.event.ActionEvent::SEMICOLON::LINE-1:
+:importjava.awt.event.ActionListener::SEMICOLON::LINE-2:
+:importjavax.swing.JFrame::SEMICOLON::LINE-3:
+:EMPTY::LINE-4:
+:public::CLASS::Q2_Viewer::EXTENDS::JFrameimplementsActionListener::LBRACE::LINE-5:
+:EMPTY::LINE-6:
+:AND::Override:LINE-7:
+:publicvoidactionPerformed::LBRACKET::ActionEventarg0::RBRACKET::LBRACE::LINE-8:
+:COMMENT::LINE-9:
+:EMPTY::LINE-10:
+:RBRACE::LINE-11:
+:EMPTY::LINE-12:
+:RBRACE::LINE-13:
+:EOF:
