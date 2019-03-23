@@ -1,0 +1,7 @@
+Beginning Log
+File Path: /home/std/cp14lt/public_html/process
+File ID: 6618
+
+Files Detected: 
+0: SchoolWork-master
+1: testFoo

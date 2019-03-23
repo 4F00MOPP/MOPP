@@ -1,0 +1,7 @@
+Beginning Log
+File Path: /home/std/cp14lt/public_html/process
+File ID: 4337
+
+Files Detected: 
+0: CourseCode_StudentNumber_test
+1: SchoolWork-master

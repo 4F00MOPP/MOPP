@@ -1,0 +1,600 @@
+/* 
+ * 4F00
+ * Assignment 2 
+ * Version 4
+ */
+
+public final class Vector implements VectorInterface {
+	
+	final double [] doubleVector;
+	final int [] intVector;
+
+	
+	//***************************Constructors**************************
+	public Vector() {//empty
+
+		intVector = new int[]{}; //inits to empty arrays
+		doubleVector = new double[]{};
+	}
+	
+	public Vector(int size, double D) {
+		
+		intVector = new int[]{};
+
+		//creates a vector of size – size 
+		// with elements initialized to D
+		double [] newVectorArray = new double[size];
+				
+		for (int i = 0;i<size;i++) { //init vector with D values
+			newVectorArray[i]=D; 
+		}
+		doubleVector = newVectorArray;
+	}
+	
+	public Vector(double[] D){
+
+		intVector = new int[]{};
+		
+		double [] newVector= new double[D.length];
+		
+		for (int i = 0;i<D.length;i++) {
+			newVector[i]=D[i]; //init vector with D values
+		}
+		doubleVector = newVector;	
+		//creates a vector initialized to array D
+	}
+	public Vector(int[] I) {
+	
+		doubleVector = new double[]{};
+		
+		int [] newVector= new int[I.length];
+		
+		for (int i = 0;i<I.length;i++) {
+			newVector[i]=I[i]; //init vector with I values
+		}
+		intVector = newVector;
+		//creates a vector initialized to array I
+	}
+	
+	//************************Methods*********************************
+	
+	public Vector append(double[] doubleArray) {
+		
+		double[] temp = new double[(doubleArray.length + doubleVector.length)];
+		
+		int iValue=0;
+		
+		for (int i=0;i<doubleVector.length;i++) { 
+			temp[i]=doubleVector[i]; //add existing values to new array
+			iValue=i;
+		}
+		
+		for (int j=0;j<doubleArray.length;j++) {
+			temp[iValue+1+j]=doubleArray[j]; //add new values
+		}
+		
+		return new Vector(temp);
+		
+	}
+	
+	public Vector append(int[] intArray) {
+		
+		int[] temp = new int[(intArray.length + intVector.length)];
+		
+		int iValue=0;
+		
+		for (int i=0;i<intVector.length;i++) {
+			temp[i]=intVector[i]; //add existing values to new array
+			iValue=i;
+		}
+		
+		for (int j=0;j<intArray.length;j++) {
+			temp[iValue+1+j]=intArray[j]; //add new values
+		}	
+		return new Vector(temp);			
+	}
+	
+	public Vector append(Vector V) {
+		
+		double[] temp = new double[(V.getLength() + doubleVector.length)];
+		
+		int iValue=0;
+		
+		for (int i=0;i<doubleVector.length;i++) {
+			temp[i]=doubleVector[i]; //add existing values to new array
+			iValue=i;
+		}
+		
+		for (int j=0;j<V.getLength();j++) {
+			temp[iValue+1+j]=V.doubleVector[j]; //add new values
+		}
+		return new Vector(temp);
+	}
+	
+	public Vector append(double aDouble) {
+
+		double[] temp = new double[doubleVector.length+1];
+		
+		for (int i=0;i<this.getLength();i++) {
+			temp[i]=doubleVector[i]; //add existing values to new array
+		}
+		
+		temp[this.getLength()]=aDouble;	//add new double
+		
+		return new Vector(temp);
+		
+	}
+	
+	public  Vector clone() {
+		
+		return this;
+	}
+	
+	public Boolean equal(Vector V) {
+		
+		if (V.equals(this)) {
+			return true;
+		}
+		return false; 
+		//this and V are the same
+	}
+	
+	public int getLength() {
+		
+		
+		if (doubleVector.length!=0) {
+			return doubleVector.length;
+			
+		}
+		
+		if (intVector.length!=0) {
+			return intVector.length;	
+		}
+		return 0;
+		//returns number of elements in this
+	}
+	
+	public Double getValue(int i) {
+		
+		if (intVector.length!=0) {
+			return (double)intVector[i];
+		}
+		if (doubleVector.length!=0) {
+			return doubleVector[i];
+		}
+		
+		return 0.0;
+		//returns the value this[i]
+	}
+	
+	public Vector add(Vector V) {
+		
+		
+		double tempArr[] = new double [this.getLength()];
+		
+		for (int i=0;i<V.getLength();i++) {
+			tempArr[i] = (V.getValue(i)+this.getValue(i));
+		}
+		return new Vector(tempArr);
+	}
+	
+	public Vector add(double aDouble) {
+
+		double tempArr[] = new double [this.getLength()];
+		
+		for (int i=0;i<this.getLength();i++) {
+			tempArr[i] = (aDouble+this.getValue(i));
+		}
+		
+		return new Vector(tempArr);
+		
+	} //add aDouble to every element of this
+	
+public Vector sub(Vector V) {
+
+		
+		double tempArr[] = new double [this.getLength()];
+		
+		for (int i=0;i<V.getLength();i++) {
+			tempArr[i] = (this.getValue(i)-V.getValue(i));
+		}
+		
+		return new Vector(tempArr);
+		//sub this – V
+	}
+	
+	public Vector subV(int l, int r) {
+		
+		int length = r-l+1;
+		
+		double tempArr[] = new double [length];
+		
+		int j=0;
+		
+		for (int i=l;i<r+1;i++) {
+			tempArr[j] = (this.getValue(i));
+			j++;
+		}
+		
+		return new Vector(tempArr);
+		
+		//will return a sub vector between the
+		//indices l and r inclusive
+	}
+		
+	public Vector Mult(Vector V) {
+
+		double tempArr[] = new double [this.getLength()];
+		
+		for (int i=0;i<V.getLength();i++) {
+			tempArr[i] = (this.getValue(i)*V.getValue(i));
+		}
+		
+		return new Vector(tempArr);//Multiple every element of this by corresponding element in V
+	}
+	
+	public Vector Mult(double aDouble) {
+		
+		double tempArr[] = new double [this.getLength()];
+		
+		for (int i=0;i<this.getLength();i++) {
+			tempArr[i] = (aDouble*this.getValue(i));
+		}
+		
+		return new Vector(tempArr);
+//Multiply every element of this by aDouble
+	}
+	
+	public Vector Normalize() {
+		
+		double value = 0;
+		
+		for (int i=0;i<this.getLength();i++) {
+			value = value + Math.pow(this.getValue(i),2); //sum of squares
+		}
+		
+		double result = Math.sqrt(value); //takes square root 
+		
+		double[] newArray = new double [this.getLength()];
+		
+		for (int i=0;i<this.getLength();i++) {
+			newArray[i]=(this.doubleVector[i]/result); //normalizing 
+		}
+		
+		return new Vector(newArray);
+		
+		//returns this as a normalized vector
+	}
+	
+	public Double EuclidianDistance(Vector V) {
+		
+		double value = 0;
+		double a=0;
+		double b=0;
+		double tempVal=0;
+		
+		for (int i=0;i<this.getLength();i++) {
+			
+			a=this.getValue(i);
+			b=V.getValue(i);	
+			tempVal = a-b; //getting distance
+			
+			value = value + Math.pow(tempVal,2);
+			
+		}
+		return Math.sqrt(value);
+	
+	}
+	public static void main(String[] args) {
+		
+	}
+
+}
+
+/*Levi Goertz
+ * 4588653
+ * 4F00 Fall/Winter 2018
+ * Assignment 2
+ * Version 4 
+ */
+
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class VectorTest {
+
+	//Constructor tests
+	@Test
+	void testVector() { //testing for empty Vector
+		
+		//***checking to make sure the vector is empty
+		Vector vector = new Vector();
+		assertArrayEquals(vector.doubleVector,new double[]{});
+		assertArrayEquals(vector.intVector,new int[]{});
+		
+	}
+
+	@Test
+	void testVectorIntDouble() {
+		
+		Vector vector = new Vector (10,10);
+		
+		assertTrue("Vector has been initialized",vector.getLength()>=0);
+		
+		//***checks to make sure all values are the same
+		if (vector.getLength()>1) { //if more than one item in vector
+			
+			double value=vector.doubleVector[0]; //get first value of vector
+			
+			for (int i=1;i<vector.getLength();i++) { 
+				assertEquals(value,vector.doubleVector[i]);		
+			}
+		}
+		
+		Vector vector2 = new Vector (0,20); //passing a size of 0
+		
+		assertTrue(vector2.getLength()==0);
+			
+	}
+
+	@Test
+	void testVectorDoubleArray() {
+		
+		double [] array = {22.1,22.2,22.3};
+		
+		Vector vector = new Vector(array);
+		
+		assertTrue("doubleVector is not empty",vector.getLength()>0);
+		
+		//***checking to see if Vector values are represented correctly
+		for (int i=0;i<vector.getLength();i++) {
+			assertEquals(array[i],vector.doubleVector[i]); 
+		}
+		
+		Vector vector2 = new Vector(new double[] {}); //passing an empty array
+		
+		assert(vector2.getLength()==0);
+	}
+
+	@Test
+	void testVectorIntArray() {
+		int [] array = {1,2,3,4};
+		
+		Vector vector = new Vector(array);
+		
+		assertTrue("intVector is not empty",vector.getLength()>0);
+	
+		//***checking to see if Vector values are represented correctly
+		for (int i=0;i<vector.getLength();i++) {
+			assertEquals(array[i],vector.intVector[i]);
+		}
+		
+		Vector vector2 = new Vector(new int[] {}); //passing an empty array
+		
+		assert(vector2.getLength()==0);
+	}
+
+	//Method tests
+	@Test
+	void testAppendDoubleArray() {
+		
+		Vector v1 = new Vector(1,10.1);
+
+		double [] value = {20.2,30.3};
+		
+		Vector v2 = v1.append(value);
+		
+		System.out.println(v2.getValue(0));
+		assertEquals((double)v2.getValue(0),10.1);
+		assertTrue("second value should be",v2.getValue(1)==20.2);
+		assertTrue("third value should be",v2.getValue(2)==30.3);
+		assertTrue("There are just three values",v2.getLength()==3);		
+	
+	}
+
+	@Test
+	void testAppendIntArray() {
+		
+		Vector v1 = new Vector(new int[] {10});
+
+		int [] value = {20,30};
+		
+		Vector v2 = v1.append(value);
+		
+		assertTrue("first value should be",v2.getValue(0)==10);
+		assertTrue("second value should be",v2.getValue(1)==20);
+		assertTrue("third value should be",v2.getValue(2)==30);
+		assertTrue("There are just three values",v2.getLength()==3);
+		
+	}
+
+	@Test
+	void testAppendVector() {
+		Vector v1 = new Vector(1,10);
+		Vector v2 = new Vector(1,20);
+		Vector v3 = v1.append(v2);
+		
+		assertTrue("first value should be",v3.getValue(0)==10);
+		assertTrue("second value should be",v3.getValue(1)==20);
+		assertTrue("There are just two values",v3.getLength()==2);
+		
+		Vector v4 = new Vector();
+		Vector v5 = v1.append(v4);
+		assertTrue("first value should be",v5.getValue(0)==10);
+		assertTrue("There are just one value",v5.getLength()==1);
+		
+	}
+
+	@Test
+	void testAppendDouble() {
+		
+		Vector v1 = new Vector(1,10.1);
+
+		double value = 20.2;
+		
+		Vector v2 = v1.append(value);
+		
+		assertTrue("first value should be",(double)v2.getValue(0)==10.1);
+		assertTrue("second value should be",(double)v2.getValue(1)==20.2);
+		assertTrue("There are just two values",v2.getLength()==2);
+	}
+
+	@Test
+	void testClone() {
+
+		Vector v1 = new Vector(2,20);
+		
+		Vector v2 = v1.clone();
+		
+		assertTrue("objs have equal length",v1.getLength()==v2.getLength());
+		
+		for (int i = 0;i<v1.getLength();i++) {
+			
+			assertEquals(v1.getValue(i),v2.getValue(i));
+		}		
+	}
+
+	@Test
+	void testEqual() {
+		
+		Vector v1 = new Vector(2,20);
+		
+		Vector v2 = new Vector(2,20);
+		
+		assertTrue("objs have equal length",v1.getLength()==v2.getLength());
+		
+		for (int i = 0;i<v1.getLength();i++) {	
+			assertEquals(v1.getValue(i),v2.getValue(i));
+		}	
+	
+		Vector v3 = new Vector(3,30);
+		
+		Vector v4 = new Vector(4,40);
+		
+		boolean allItemsTheSame = true;
+		
+		for (int i = 0;i<v1.getLength();i++) {
+			if (v3.getValue(i)!=v4.getValue(i)) {
+				
+				allItemsTheSame = false;
+			}
+		}	
+		assertFalse(v3.getLength()==v4.getLength()&&allItemsTheSame==true);
+
+	}
+
+	@Test
+	void testGetLength() {
+		
+		Vector v1 = new Vector();
+		
+		assertTrue(v1.getLength()==0);
+		
+		Vector v2 = new Vector(2,10);
+		
+		assertTrue(v2.getLength()==2);
+		Vector v3 = new Vector(3,20.2);
+		
+		assertTrue(v3.getLength()==3);
+	}
+
+	@Test
+	void testGetValue() {
+		
+		Vector v1 = new Vector(2,20);
+		
+		assertTrue(v1.getValue(1)==20);
+		
+		Vector v2 = new Vector(2,30.3);
+		
+		assertTrue(v2.getValue(0)==30.3);		
+	}
+
+	@Test
+	void testAddVector() {
+		
+		Vector v1 = new Vector(2,22);
+		Vector v2 = new Vector(2,33);
+		Vector v3 = v1.add(v2);
+		
+		assertTrue(v3.getLength()==2);
+		assertTrue(v3.getValue(1)==55);
+		
+		Vector v4 = new Vector();
+	}
+
+	@Test
+	void testAddDouble() {
+		Vector v1 = new Vector(2,22);
+		Vector v2 = v1.add(0.22);
+		
+		assertTrue(v2.getLength()==2);
+		assertTrue(v2.getValue(1)==22.22);
+	}
+
+	@Test
+	void testSub() {
+		
+		Vector v1 = new Vector(2,21);
+		Vector v2 = new Vector(2,0.5);
+		Vector v3 = v1.sub(v2);
+		
+		assertTrue(v3.getLength()==2);
+		assertTrue(v3.getValue(1)==20.5);
+	}
+
+	@Test
+	void testSubV() {
+		Vector v1 = new Vector(new double [] {1,2,3,4,5});
+		Vector v2 = new Vector(new double[] {2,3,4});
+		Vector v3 = v1.subV(1,3);
+		
+		assertArrayEquals(v3.doubleVector,v2.doubleVector);
+		
+		assertNotSame(v3, new Vector(10,10));	
+	}
+
+	@Test
+	void testMultVector() {
+
+		Vector v1 = new Vector(2,20);
+		Vector v2 = new Vector(2,0.5);
+		Vector v3 = v1.Mult(v2);
+		
+		assertTrue(v3.getLength()==2);
+		assertTrue(v3.getValue(1)==10);
+	}
+
+	@Test
+	void testMultDouble() {
+
+		Vector v1 = new Vector(2,10);
+		Vector v2 = v1.Mult(2.5);
+		
+		assertTrue(v2.getLength()==2);
+		assertTrue(v2.getValue(1)==25);
+	}
+
+	@Test
+	void testNormalize() {
+
+		Vector v1 = new Vector(new double[] {3,4});
+		Vector v2 = v1.Normalize(); 
+		Vector v3 = new Vector (new double[] {0.6,0.8}); //expected result
+		
+		assertArrayEquals(v2.doubleVector,v3.doubleVector);
+	}
+
+	@Test
+	void testEuclidianDistance() {
+
+		Vector v1 = new Vector(new int[] {1,2});
+		Vector v2 = new Vector(new int[] {1,4});
+		
+		assertTrue(v1.EuclidianDistance(v2)==2); //2 is expected result
+	}
+}
