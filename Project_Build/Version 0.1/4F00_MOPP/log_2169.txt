@@ -1,0 +1,8 @@
+Beginning Log
+File Path: C:\Users\curti\eclipse-workspace\process
+File ID: 2169
+
+Files Detected: 
+0: 4P80_AS2_v2
+1: Assignment2
+2: TestProgram

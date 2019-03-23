@@ -1,0 +1,8 @@
+To start the Java program:
+	Navigate to the 4F00_MOPP folder
+	Run:
+		java -cp ./bin SystemStarter
+
+	***Yes you should be able to do java -cp ./4F00_MOPP/bin SystemStarter instead, but it doesnt work.
+	Basically, to get it to work we need to change the ParentDirecty variable in the file to extend to public_html. 
+	Which would cause it to not work on my computer at home. If you need an explanation ask me in person, its easier to show than explain.
