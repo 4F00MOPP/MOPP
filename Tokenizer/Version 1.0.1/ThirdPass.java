@@ -52,7 +52,7 @@ public class ThirdPass {
             
             lineOfCode = lineOfCode.replaceAll("\\s+","");//Removes any duplicate spaces
 
-            thirdPass.print(":LINE-"+lineCount+":"+lineOfCode); //if a token was found, write new line
+            thirdPass.print(lineOfCode); //if a token was found, write new line
             thirdPass.println();//keeps everything from ending up on one line
             lineCount++;
         }
