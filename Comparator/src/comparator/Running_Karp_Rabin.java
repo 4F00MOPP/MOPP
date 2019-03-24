@@ -331,6 +331,7 @@ public class Running_Karp_Rabin {
 				
 		}while(!stop);
 		scribe.print(file2name+": "+100*(double)tiles/(double)tokens1.size());
+		scribe.flush();
 		
 	}//runningKarpRabin
 	
