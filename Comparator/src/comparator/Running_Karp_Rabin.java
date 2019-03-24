@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.PrintWriter;
+import java.util.HashSet;
 public class Running_Karp_Rabin {
 	private int lineNumbers = 0;
 	private int tiles;
@@ -20,6 +21,7 @@ public class Running_Karp_Rabin {
 	private String file2name = "";
 	private String file1start = "";
 	private String file2start = "";
+	private File[][] allFiles;
 	private int length;
 	private int numOfCollisions=0;//the number of collisions when the algorithm is run. This is tracked for performance reasons
 	ArrayList<Token> tokens1 = new ArrayList<>();
@@ -28,60 +30,56 @@ public class Running_Karp_Rabin {
 
 	
 	//this constructor makes a unique hash entry for each token in a given alphabet
-	public Running_Karp_Rabin(String...alphabet) {
-		String File3 = "";
-		String File1 = "";
-		String File2 = "";
-		File file1 = new File("/home/andrew/eclipse-workspace/Comparator/src/file1.txt");
+	public Running_Karp_Rabin(String directory, PrintWriter sc) {
+		scribe =sc;
+		File f = new File(directory);
+		File[] subdirectories = f.listFiles();
+		allFiles = new File[subdirectories.length][];
+		String[][] tokens = new String[allFiles.length][];
+		for(int i=0; i<subdirectories.length; i++) {
+			allFiles[i] = subdirectories[i].listFiles();
+			tokens[i] = new String[allFiles[i].length];
+		}
 		Scanner s;
-		try {
-			s = new Scanner(file1);
-		
-		
-		while(s.hasNext()) {
-			File1 += s.next();
+		for(int i=0; i<allFiles.length; i++) {
+			for(int j=0; j<allFiles[i].length; j++) {
+				String text = "";
+				try {
+					s = new Scanner(allFiles[i][j]);
+					while(s.hasNext()) {
+						text+=s.next();
+					}
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				}
+				
+				tokens[i][j] = text;
+			}
 		}
-		s.close();
-		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		File file2 = new File("/home/andrew/eclipse-workspace/Comparator/src/file2.txt");
-		try {
-			s = new Scanner(file2);
-		
-		
-		while(s.hasNext()) {
-			File2 += s.next();
-		}
-		s.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		File file3 = new File("/home/andrew/eclipse-workspace/Comparator/src/file3.txt");
-		try {
-			s = new Scanner(file3);
-		
-		
-		while(s.hasNext()) {
-			File3+= s.next();
-		}
-		s.close();
-		}catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		HashSet<String> set = new HashSet<>();
+		String[][] key = Tokens.importTokens();
 		karpRabinHash = new Hashtable<>();
+		LinkedList<String> alphabet = new LinkedList<>();
+		int index = 1;
+		for(int i=0; i<key.length; i++) {
+			StringTokenizer t = new StringTokenizer(key[i][index],":");
+			while(t.hasMoreTokens()) {
+				String temp = t.nextToken();
+				if(!set.contains(temp)) {
+					set.add(temp);
+					alphabet.add(temp);
+				}
+			}
+		}
+		
 		values = new Hashtable<>();
-		length = alphabet.length;
+		length = alphabet.size();
 		int i = 0;
 		for(String letter : alphabet) {
 			values.put(letter, i);
 			i++;
 		}
-		
-		start(new String[] {File1, File2, File3});
+		start(tokens);
 		System.out.println("heree");
 		
 		
@@ -106,34 +104,67 @@ public class Running_Karp_Rabin {
 		return (tokens/actualSize)*100;
 	}
 	
-	public void start(String[] files) {
+	public void start(String[][] files) {
 		queueOfQueues = new LinkedList<>();
 		ArrayList<Token> tokens1 = new ArrayList<>();
 		ArrayList<Token> tokens2 = new ArrayList<>();
-		ArrayList<ArrayList<Token>> tokens = new ArrayList<>();
+		ArrayList<ArrayList<ArrayList<Token>>> tokens = new ArrayList<>(files.length);
 		for(int i=0; i<files.length; i++) {
-			tokens.add(parse(files[i]));
-		}
-		for(int i=0; i<tokens.size(); i++) {
-			file1name = "file"+(i+1);
-			for(int j=0; j<tokens.size(); j++) {
-				queueOfQueues.clear();
-				file2name = "file"+(j+1);
-				if(i>=j)
-					continue;
+			for(int j = 0; j<files[i].length; j++) {
+				if(j==0) {
+					ArrayList<ArrayList<Token>> temp = new ArrayList<>();
+					temp.add(parse(files[i][j]));
+					tokens.add(temp);
+				}
 				else {
-					runningKarpRabin(tokens.get(i),tokens.get(j));
+					tokens.get(i).add(parse(files[i][j]));
 				}
 			}
-			System.out.println("Percent Plagiarised: "+percentMatching(tokens.get(i)));
+		}
+		for(int i=0; i<tokens.size(); i++) {
+			//file1name = "file"+(i+1);
+			for(int j=0; j<tokens.get(i).size(); j++) {
+				ArrayList<Token> firstFile = tokens.get(i).get(j);
+				file1name = allFiles[i][j].getName();
+				boolean inProgress = false;
+				outer2:for(int k=0; k<tokens.size(); k++ ) {
+					for(int l=0; l<tokens.get(k).size(); l++) {
+						
+						if(k==i)
+							continue outer2;
+						else {
+							queueOfQueues.clear();
+							if(!inProgress) {
+								for(int m=0; m<firstFile.size(); m++) {
+									firstFile.get(m).unmark();
+								
+								}
+								inProgress = true;
+							}
+							ArrayList<Token> secondFile = tokens.get(k).get(l);
+							for(int m=0; m<secondFile.size(); m++) {
+								secondFile.get(m).unmark();
+							}
+							file2name = allFiles[k][l].getName();
+							
+							runningKarpRabin(firstFile,secondFile);
+						}
+					}
+				}
+				
+				System.out.println("Percent Plagiarised: "+percentMatching(firstFile));
+				}
+			
+			}
+		System.out.println("end for realsies");
 		}
 
-		System.out.println("end for realsies");
+		
 		/*parse(files[1], files[2]);
 		runningKarpRabin();
 		parse(files[0],files[2]);
 		runningKarpRabin();*/
-	}
+	
 	
 
 	
@@ -279,7 +310,10 @@ public class Running_Karp_Rabin {
 								for(;;) {
 									if(b>=queueOfQueues.size()) {
 										queue.get(a).setIndex2(i);
-										queue.get(a).setLine2(file2start);
+										System.out.println("setting index 2 from first");
+										System.out.print(i);
+										System.out.println(queue.get(a));
+										//queue.get(a).setLine2(file2start);
 										queueOfQueues.add(queue);
 										break;
 									}
@@ -290,7 +324,7 @@ public class Running_Karp_Rabin {
 									else {
 										System.out.println("setting index 2");
 										queue.get(a).setIndex2(i);
-										queue.get(a).setLine2(file2start);
+										//queue.get(a).setLine2(file2start);
 										queueOfQueues.add(b, queue);
 										break;
 									}
@@ -331,6 +365,7 @@ public class Running_Karp_Rabin {
 			}
 				
 		}while(!stop);
+		System.out.println(file2name+": "+100*(double)tiles/(double)tokens1.size());
 		
 	}
 	
@@ -359,6 +394,7 @@ public class Running_Karp_Rabin {
 					for(int j=0; j<s; j++) {
 						//int a = 0;
 						for(;;) {
+							System.out.println(match);
 							int index2 = match.getIndex2();
 							try {
 								Integer.parseInt(tokens2.get(match.getIndex2()+z+j).getToken());
@@ -386,7 +422,7 @@ public class Running_Karp_Rabin {
 						tiles++;
 						
 					}
-					System.out.println(file1name+", "+file2name+", "+match.getLine1()+", "+match.getLine2());
+					//System.out.println(file1name+", "+file2name+", "+match.getLine1()+", "+match.getLine2());
 				}
 				else if(string.size()-numTilesOccluded>=s) {
 					int i=0;
@@ -458,7 +494,7 @@ public class Running_Karp_Rabin {
 	
 	public static void main(String[] args) {
 		String[] alphabet = new String[] {"a","b","c","d"};
-		Running_Karp_Rabin s = new Running_Karp_Rabin(alphabet);
+		Running_Karp_Rabin s = new Running_Karp_Rabin("/home/andrew/eclipse-workspace/Comparator/src/textfiles", null);
 		//s.karprabin("jcdjhifbjhdabcaabjhd", "abbaaj");
 		//s.karprabin("jcdjhifbjhdabcaabjhd", "jhd");
 		//s.karprabin("jcdjhifbjhdabcaabjhd", "aab");

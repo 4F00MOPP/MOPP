@@ -21,4 +21,7 @@ public class Token {
 	public void mark() {
 		marked = true;
 	}
+	public void unmark() {
+		marked = false;
+	}
 }
