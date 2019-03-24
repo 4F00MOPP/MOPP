@@ -15,7 +15,7 @@ public class Running_Karp_Rabin {
 	private PrintWriter scribe;
 	private Hashtable<String, Integer> values;
 	private static final int HASH_PRIME = 3;
-	private static final int MIN_MATCH_LENGTH=2;
+	private static final int MIN_MATCH_LENGTH=5;
 	private Hashtable<Long,LinkedList<Wrapper>>karpRabinHash;
 	private String file1name ="";
 	private String file2name = "";
@@ -80,7 +80,6 @@ public class Running_Karp_Rabin {
 			i++;
 		}
 		start(tokens);
-		System.out.println("heree");
 		
 		
 		
@@ -88,6 +87,7 @@ public class Running_Karp_Rabin {
 		
 	}//constructor
 	
+	//this method determines the percentage of tokens which were found in another document
 	private double percentMatching(ArrayList<Token> list) {
 		double tokens = 0;
 		double actualSize = list.size();
@@ -102,8 +102,8 @@ public class Running_Karp_Rabin {
 			}
 		}
 		return (tokens/actualSize)*100;
-	}
-	
+	}//percentMatching
+	//this method performs the comparison between all files in a two dimensional array
 	public void start(String[][] files) {
 		queueOfQueues = new LinkedList<>();
 		ArrayList<Token> tokens1 = new ArrayList<>();
@@ -126,6 +126,8 @@ public class Running_Karp_Rabin {
 			for(int j=0; j<tokens.get(i).size(); j++) {
 				ArrayList<Token> firstFile = tokens.get(i).get(j);
 				file1name = allFiles[i][j].getName();
+				scribe.print(file1name);
+				scribe.flush();
 				boolean inProgress = false;
 				outer2:for(int k=0; k<tokens.size(); k++ ) {
 					for(int l=0; l<tokens.get(k).size(); l++) {
@@ -152,22 +154,18 @@ public class Running_Karp_Rabin {
 					}
 				}
 				
-				System.out.println("Percent Plagiarised: "+percentMatching(firstFile));
+				scribe.print("Percent Plagiarised: "+percentMatching(firstFile));
+				scribe.flush();
 				}
 			
 			}
-		System.out.println("end for realsies");
-		}
+		}//start
 
 		
-		/*parse(files[1], files[2]);
-		runningKarpRabin();
-		parse(files[0],files[2]);
-		runningKarpRabin();*/
 	
 	
 
-	
+	//this method parses files
 	public ArrayList<Token> parse(String file1) {
 		StringTokenizer letters1 = new StringTokenizer(file1, ":");
 		//StringTokenizer letters2 = new StringTokenizer(file2, ":");
@@ -184,8 +182,8 @@ public class Running_Karp_Rabin {
 		
 		return tokens1;
 		
-	}
-	
+	}//parse
+	//this method creates the hash for a value that does not appear in the table
 	private long unknownHash(String s) {
 		try {
 			Integer.parseInt(s);
@@ -197,8 +195,8 @@ public class Running_Karp_Rabin {
 			sum+=c;
 		}
 		return sum;
-	}
-	
+	}//unknownHash
+	//this method generates the hash value for a string of tokens
 	public long generateHash(ArrayList<Token> pattern) {
 		int patternLength = pattern.size();
 		long hash = 0;
@@ -214,11 +212,12 @@ public class Running_Karp_Rabin {
 			power--;
 		}
 		return hash;
-	}
+	}//generateHash
 	
-		
+	//this method finds the maximal matches of two files and records them in a queue	
 	private int scanPattern(int s, ArrayList<Token> tokens1, ArrayList<Token> tokens2) {
-		//queueOfQueues = new LinkedList<>();
+		karpRabinHash.clear();
+		queueOfQueues.clear();
 		boolean enter = false;
 		int maxMatch = 0;
 		for(int i=0; i< tokens1.size(); i++) {//Starts at beginning of list for text
@@ -227,23 +226,7 @@ public class Running_Karp_Rabin {
 			else {
 				enter = true;
 				ArrayList<Token> temp = new ArrayList<>();
-				//temp.addAll(tokens1.subList(i, i+s+lineNumbers));
-				ArrayList<Token> temp1 = new ArrayList<>();
-				boolean start = false;
-				int z = i;
-				for(int recover = i; recover<i+s; recover++) {
-					try {
-						Integer line = Integer.parseInt(tokens1.get(z).getToken());
-						recover--;
-						if(!start) {
-							file1start = ""+line;
-							start = true;
-						}
-					}catch(NumberFormatException e) {
-						temp.add(tokens1.get(z));
-					}
-					z++;
-				}
+				temp.addAll(tokens1.subList(i, i+s+lineNumbers));
 				long code = generateHash(temp);//generate its hashcode
 				LinkedList<Wrapper> queue = karpRabinHash.get(code);//check to see if collision
 				if(queue==null) {//if not
@@ -267,22 +250,10 @@ public class Running_Karp_Rabin {
 				continue;
 			else {
 				ArrayList<Token> temp = new ArrayList<>();
-				//temp.addAll(tokens2.subList(i, i+s+lineNumbers));
+				temp.addAll(tokens2.subList(i, i+s+lineNumbers));
 				boolean start = false;
-				for(int recover = i; recover<i+s+lineNumbers; recover++) {
-					try {
-						Integer line = Integer.parseInt(tokens2.get(recover).getToken());
-						if(!start) {
-							file2start = ""+line;
-							start = true;
-						}
-					}catch(NumberFormatException e) {
-						temp.add(tokens2.get(recover));
-					}
-				}
 				long hashCode = generateHash(temp);//create the hash for the substring
 				if(karpRabinHash.containsKey(hashCode)) {//check if hashtable contains the hash
-					System.out.println("possible match");
 					LinkedList<Wrapper> queue = karpRabinHash.get(hashCode);
 					for(int a=0; a<queue.size(); a++){//for each entry with hash equal to created value
 						ArrayList<Token> letter = queue.get(a).getList();
@@ -294,7 +265,6 @@ public class Running_Karp_Rabin {
 							}
 						}
 						if(check) {//if they are the same
-							System.out.println("match");
 							int k = s;
 							int t = queue.get(a).getIndex();
 							while(i+k<tokens2.size()&&t+k<tokens1.size()&&tokens2.get(i+k).equals(tokens1.get(t+k))&!tokens2.get(i+k).getMarked()&!tokens1.get(t+k).getMarked()) {//check how long the maximal match is
@@ -304,16 +274,12 @@ public class Running_Karp_Rabin {
 								return k;
 							else {//otherwise, perform a sorted insert into a queue of queues.
 								//scribe.append(file1name+", "+file2name+", "+file1start+", "+file2start);
-								System.out.println("adding to queue");
+								//System.out.println("adding to queue");
 								int b = 0;
 								int length = queue.size();
 								for(;;) {
 									if(b>=queueOfQueues.size()) {
 										queue.get(a).setIndex2(i);
-										System.out.println("setting index 2 from first");
-										System.out.print(i);
-										System.out.println(queue.get(a));
-										//queue.get(a).setLine2(file2start);
 										queueOfQueues.add(queue);
 										break;
 									}
@@ -322,9 +288,7 @@ public class Running_Karp_Rabin {
 										b++;
 									}
 									else {
-										System.out.println("setting index 2");
 										queue.get(a).setIndex2(i);
-										//queue.get(a).setLine2(file2start);
 										queueOfQueues.add(b, queue);
 										break;
 									}
@@ -341,8 +305,9 @@ public class Running_Karp_Rabin {
 			}
 		}
 		return maxMatch;
-	}
+	}//scanPattern
 	
+	//this is the top level algorithm that finds the matches and then marks them
 	private void runningKarpRabin(ArrayList<Token> tokens1, ArrayList<Token> tokens2) {
 		int s = 20;
 		tiles = 0;
@@ -365,13 +330,13 @@ public class Running_Karp_Rabin {
 			}
 				
 		}while(!stop);
-		System.out.println(file2name+": "+100*(double)tiles/(double)tokens1.size());
+		scribe.print(file2name+": "+100*(double)tiles/(double)tokens1.size());
 		
-	}
+	}//runningKarpRabin
 	
-	
+	//this method marks the matching tiles
 	private void markArrays(int s, ArrayList<Token> tokens1, ArrayList<Token> tokens2) {
-		for(LinkedList<Wrapper> list : queueOfQueues) {
+		outer:for(LinkedList<Wrapper> list : queueOfQueues) {
 			if(list.isEmpty()) {
 				continue;
 			}
@@ -394,8 +359,12 @@ public class Running_Karp_Rabin {
 					for(int j=0; j<s; j++) {
 						//int a = 0;
 						for(;;) {
-							System.out.println(match);
+							try {
 							int index2 = match.getIndex2();
+							}catch(NullPointerException e) {
+								continue outer;
+							}
+							
 							try {
 								Integer.parseInt(tokens2.get(match.getIndex2()+z+j).getToken());
 								z++;
@@ -464,8 +433,9 @@ public class Running_Karp_Rabin {
 				}
 			}
 		}
-	}
+	}//markArrays
 	
+	//this method returns the number of consecutive unmarked tiles
 	private int getDistance(int start, ArrayList<Token> tokens1) {
 		lineNumbers = 0;
 		int i=0;
@@ -486,7 +456,7 @@ public class Running_Karp_Rabin {
 		return sum-1;
 		
 			
-	}
+	}//getDistance
 	
 	
 	
