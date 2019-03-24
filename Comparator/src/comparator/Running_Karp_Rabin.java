@@ -154,7 +154,7 @@ public class Running_Karp_Rabin {
 					}
 				}
 				
-				scribe.print("Percent Plagiarised: "+percentMatching(firstFile));
+				scribe.print("Percentage of Similarity: "+percentMatching(firstFile));
 				scribe.flush();
 				}
 			
