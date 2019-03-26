@@ -1,0 +1,89 @@
+Beginning Log
+File Path: /home/std/cp14lt/public_html/process
+File ID: 2474
+
+Projects Detected: 
+0: 4f00_2_cp14lt
+1: 4f00_1_cp14lt
+2: 3P93_3_cp14lt
+
+Source Files Detected:
+4f00_2_cp14lt
+
+4f00_1_cp14lt
+PixelDisplayer.java
+PixelArray.java
+P1_PixelArray.java
+P1_Algorithm.java
+P2_FileChooser.java
+Assignment2.java
+P1_PixelDisplayer.java
+main.java
+P2_ImageDisplayer.java
+P2_ImgFrame.java
+P2_Algorithm.java
+
+3P93_3_cp14lt
+main.cpp
+
+No source files located in 4f00_2_cp14lt
+
+tok_PixelDisplayer.java
+tok_main.cpp: 29.239766081871345
+Percentage of Similarity: 29.239766081871345
+
+tok_PixelArray.java
+tok_main.cpp: 44.84304932735426
+Percentage of Similarity: 44.843049327354265
+
+tok_P1_PixelArray.java
+tok_main.cpp: 45.984455958549226
+Percentage of Similarity: 45.984455958549226
+
+tok_P1_Algorithm.java
+tok_main.cpp: 35.294117647058826
+Percentage of Similarity: 35.294117647058826
+
+tok_P2_FileChooser.java
+tok_main.cpp: 15.957446808510639
+Percentage of Similarity: 15.957446808510639
+
+tok_Assignment2.java
+tok_main.cpp: 50.72463768115942
+Percentage of Similarity: 50.72463768115942
+
+tok_P1_PixelDisplayer.java
+tok_main.cpp: 44.19889502762431
+Percentage of Similarity: 44.19889502762431
+
+tok_main.java
+tok_main.cpp: 40.98360655737705
+Percentage of Similarity: 40.98360655737705
+
+tok_P2_ImageDisplayer.java
+tok_main.cpp: 14.30615164520744
+Percentage of Similarity: 14.326647564469914
+
+tok_P2_ImgFrame.java
+tok_main.cpp: 40.90909090909091
+Percentage of Similarity: 40.909090909090914
+
+tok_P2_Algorithm.java
+tok_main.cpp: 38.70967741935484
+Percentage of Similarity: 38.70967741935484
+
+tok_main.cpp
+tok_PixelDisplayer.java: 11.708253358925145
+tok_PixelArray.java: 2.495201535508637
+tok_P1_PixelArray.java: 1.9193857965451055
+tok_P1_Algorithm.java: 0.0
+tok_P2_FileChooser.java: 0.0
+tok_Assignment2.java: 0.5758157389635317
+tok_P1_PixelDisplayer.java: 0.19193857965451055
+tok_main.java: 0.0
+tok_P2_ImageDisplayer.java: 3.2629558541266794
+tok_P2_ImgFrame.java: 7.485604606525912
+tok_P2_Algorithm.java: 3.071017274472169
+Percentage of Similarity: 30.75740099961553
+
+Algorithm Complete
