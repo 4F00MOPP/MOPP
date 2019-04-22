@@ -1,0 +1,366 @@
+Beginning Log
+File Path: /home/std/group/c4f00g01/public_html/process
+File ID: BULK
+
+Projects Detected: 
+0: Bulk_2_2_2
+1: Bulk_1_1_1
+2: Bulk_3_3_3
+
+Source Files Detected:
+Bulk_2_2_2
+GeneratePath.java
+SolverGUI.java
+TSPDistMatrix.java
+DeepCopy.java
+MutatePath.java
+PathPanel.java
+SolveTSP.java
+ReadFile.java
+Assignment3.java
+
+Source Files Detected:
+Bulk_1_1_1
+sudokuBoard.java
+SudokuException.java
+SudokuAssignment.java
+
+Source Files Detected:
+Bulk_3_3_3
+part6.cpp
+test1.cpp
+part3.cpp
+part2.cpp
+exampleC.cpp
+part4.cpp
+part5.cpp
+lab2Submission.cpp
+
+
+Analysis:
+tok_GeneratePath.java_2_2
+tok_sudokuBoard.java: 45.16129032258065
+tok_SudokuException.java: 3.225806451612903
+tok_SudokuAssignment.java: 6.451612903225806
+tok_part6.cpp: 0.0
+tok_test1.cpp: 0.0
+tok_part3.cpp: 0.0
+tok_part2.cpp: 0.0
+tok_exampleC.cpp: 0.0
+tok_part4.cpp: 0.0
+tok_part5.cpp: 0.0
+tok_lab2Submission.cpp: 0.0
+Percentage of Similarity: 54.83870967741935
+
+Analysis:
+tok_SolverGUI.java_2_2
+tok_sudokuBoard.java: 9.105960264900663
+tok_SudokuException.java: 1.6556291390728477
+tok_SudokuAssignment.java: 24.834437086092716
+tok_part6.cpp: 0.0
+tok_test1.cpp: 0.0
+tok_part3.cpp: 0.0
+tok_part2.cpp: 0.0
+tok_exampleC.cpp: 0.0
+tok_part4.cpp: 0.0
+tok_part5.cpp: 0.0
+tok_lab2Submission.cpp: 0.0
+Percentage of Similarity: 35.59602649006622
+
+Analysis:
+tok_TSPDistMatrix.java_2_2
+tok_sudokuBoard.java: 27.272727272727273
+tok_SudokuException.java: 3.0303030303030303
+tok_SudokuAssignment.java: 15.151515151515152
+tok_part6.cpp: 0.0
+tok_test1.cpp: 0.0
+tok_part3.cpp: 0.0
+tok_part2.cpp: 0.0
+tok_exampleC.cpp: 0.0
+tok_part4.cpp: 0.0
+tok_part5.cpp: 0.0
+tok_lab2Submission.cpp: 0.0
+Percentage of Similarity: 45.45454545454545
+
+Analysis:
+tok_DeepCopy.java_2_2
+tok_sudokuBoard.java: 45.97701149425287
+tok_SudokuException.java: 5.747126436781609
+tok_SudokuAssignment.java: 5.747126436781609
+tok_part6.cpp: 0.0
+tok_test1.cpp: 0.0
+tok_part3.cpp: 0.0
+tok_part2.cpp: 0.0
+tok_exampleC.cpp: 0.0
+tok_part4.cpp: 0.0
+tok_part5.cpp: 0.0
+tok_lab2Submission.cpp: 0.0
+Percentage of Similarity: 57.47126436781609
+
+Analysis:
+tok_MutatePath.java_2_2
+tok_sudokuBoard.java: 28.3203125
+tok_SudokuException.java: 0.9765625
+tok_SudokuAssignment.java: 24.4140625
+tok_part6.cpp: 0.0
+tok_test1.cpp: 0.0
+tok_part3.cpp: 0.0
+tok_part2.cpp: 0.0
+tok_exampleC.cpp: 0.0
+tok_part4.cpp: 0.0
+tok_part5.cpp: 0.0
+tok_lab2Submission.cpp: 0.0
+Percentage of Similarity: 53.7109375
+
+Analysis:
+tok_PathPanel.java_2_2
+tok_sudokuBoard.java: 15.901060070671377
+tok_SudokuException.java: 0.0
+tok_SudokuAssignment.java: 12.36749116607774
+tok_part6.cpp: 0.0
+tok_test1.cpp: 0.0
+tok_part3.cpp: 0.0
+tok_part2.cpp: 0.0
+tok_exampleC.cpp: 0.0
+tok_part4.cpp: 0.0
+tok_part5.cpp: 0.0
+tok_lab2Submission.cpp: 0.0
+Percentage of Similarity: 28.368794326241137
+
+Analysis:
+tok_SolveTSP.java_2_2
+tok_sudokuBoard.java: 18.92744479495268
+tok_SudokuException.java: 1.5772870662460567
+tok_SudokuAssignment.java: 26.813880126182966
+tok_part6.cpp: 0.0
+tok_test1.cpp: 0.0
+tok_part3.cpp: 0.0
+tok_part2.cpp: 0.0
+tok_exampleC.cpp: 0.0
+tok_part4.cpp: 0.0
+tok_part5.cpp: 0.0
+tok_lab2Submission.cpp: 0.0
+Percentage of Similarity: 47.3186119873817
+
+Analysis:
+tok_ReadFile.java_2_2
+tok_sudokuBoard.java: 24.271844660194176
+tok_SudokuException.java: 2.4271844660194173
+tok_SudokuAssignment.java: 36.407766990291265
+tok_part6.cpp: 0.0
+tok_test1.cpp: 0.0
+tok_part3.cpp: 0.0
+tok_part2.cpp: 0.0
+tok_exampleC.cpp: 0.0
+tok_part4.cpp: 0.0
+tok_part5.cpp: 0.0
+tok_lab2Submission.cpp: 0.0
+Percentage of Similarity: 63.10679611650486
+
+Analysis:
+tok_Assignment3.java_2_2
+tok_sudokuBoard.java: 10.309278350515465
+tok_SudokuException.java: 5.154639175257732
+tok_SudokuAssignment.java: 30.927835051546392
+tok_part6.cpp: 0.0
+tok_test1.cpp: 0.0
+tok_part3.cpp: 0.0
+tok_part2.cpp: 0.0
+tok_exampleC.cpp: 0.0
+tok_part4.cpp: 0.0
+tok_part5.cpp: 0.0
+tok_lab2Submission.cpp: 0.0
+Percentage of Similarity: 46.391752577319586
+
+Analysis:
+tok_sudokuBoard.java_1_1
+tok_GeneratePath.java: 3.7531276063386154
+tok_SolverGUI.java: 1.6680567139282736
+tok_TSPDistMatrix.java: 0.8340283569641368
+tok_DeepCopy.java: 0.0
+tok_MutatePath.java: 2.5020850708924103
+tok_PathPanel.java: 0.0
+tok_SolveTSP.java: 0.0
+tok_ReadFile.java: 0.0
+tok_Assignment3.java: 0.0
+tok_part6.cpp: 0.0
+tok_test1.cpp: 0.4170141784820684
+tok_part3.cpp: 0.0
+tok_part2.cpp: 0.0
+tok_exampleC.cpp: 0.0
+tok_part4.cpp: 0.0
+tok_part5.cpp: 0.0
+tok_lab2Submission.cpp: 0.0
+Percentage of Similarity: 9.205020920502092
+
+Analysis:
+tok_SudokuException.java_1_1
+tok_GeneratePath.java: 10.416666666666666
+tok_SolverGUI.java: 10.416666666666666
+tok_TSPDistMatrix.java: 10.416666666666666
+tok_DeepCopy.java: 0.0
+tok_MutatePath.java: 0.0
+tok_PathPanel.java: 0.0
+tok_SolveTSP.java: 0.0
+tok_ReadFile.java: 0.0
+tok_Assignment3.java: 0.0
+tok_part6.cpp: 0.0
+tok_test1.cpp: 0.0
+tok_part3.cpp: 0.0
+tok_part2.cpp: 0.0
+tok_exampleC.cpp: 0.0
+tok_part4.cpp: 0.0
+tok_part5.cpp: 0.0
+tok_lab2Submission.cpp: 0.0
+Percentage of Similarity: 31.25
+
+Analysis:
+tok_SudokuAssignment.java_1_1
+tok_GeneratePath.java: 24.169184290030213
+tok_SolverGUI.java: 17.371601208459214
+tok_TSPDistMatrix.java: 2.2658610271903323
+tok_DeepCopy.java: 0.0
+tok_MutatePath.java: 6.042296072507553
+tok_PathPanel.java: 0.7552870090634441
+tok_SolveTSP.java: 3.0211480362537766
+tok_ReadFile.java: 3.0211480362537766
+tok_Assignment3.java: 0.0
+tok_part6.cpp: 0.0
+tok_test1.cpp: 0.7552870090634441
+tok_part3.cpp: 0.0
+tok_part2.cpp: 0.0
+tok_exampleC.cpp: 0.0
+tok_part4.cpp: 0.0
+tok_part5.cpp: 0.0
+tok_lab2Submission.cpp: 0.0
+Percentage of Similarity: 57.40181268882175
+
+Analysis:
+tok_part6.cpp_3_3
+tok_GeneratePath.java: 13.157894736842104
+tok_SolverGUI.java: 19.736842105263158
+tok_TSPDistMatrix.java: 0.0
+tok_DeepCopy.java: 0.0
+tok_MutatePath.java: 0.0
+tok_PathPanel.java: 0.0
+tok_SolveTSP.java: 0.0
+tok_ReadFile.java: 0.0
+tok_Assignment3.java: 0.0
+tok_sudokuBoard.java: 0.0
+tok_SudokuException.java: 0.0
+tok_SudokuAssignment.java: 0.0
+Percentage of Similarity: 32.89473684210527
+
+Analysis:
+tok_test1.cpp_3_3
+tok_GeneratePath.java: 15.418502202643172
+tok_SolverGUI.java: 15.418502202643172
+tok_TSPDistMatrix.java: 0.0
+tok_DeepCopy.java: 0.0
+tok_MutatePath.java: 2.202643171806167
+tok_PathPanel.java: 0.0
+tok_SolveTSP.java: 4.405286343612334
+tok_ReadFile.java: 0.0
+tok_Assignment3.java: 0.0
+tok_sudokuBoard.java: 2.202643171806167
+tok_SudokuException.java: 0.0
+tok_SudokuAssignment.java: 0.0
+Percentage of Similarity: 39.647577092511014
+
+Analysis:
+tok_part3.cpp_3_3
+tok_GeneratePath.java: 19.10828025477707
+tok_SolverGUI.java: 9.554140127388536
+tok_TSPDistMatrix.java: 0.0
+tok_DeepCopy.java: 0.0
+tok_MutatePath.java: 0.0
+tok_PathPanel.java: 0.0
+tok_SolveTSP.java: 3.1847133757961785
+tok_ReadFile.java: 0.0
+tok_Assignment3.java: 0.0
+tok_sudokuBoard.java: 6.369426751592357
+tok_SudokuException.java: 0.0
+tok_SudokuAssignment.java: 0.0
+Percentage of Similarity: 38.21656050955414
+
+Analysis:
+tok_part2.cpp_3_3
+tok_GeneratePath.java: 26.31578947368421
+tok_SolverGUI.java: 6.578947368421052
+tok_TSPDistMatrix.java: 0.0
+tok_DeepCopy.java: 0.0
+tok_MutatePath.java: 6.578947368421052
+tok_PathPanel.java: 0.0
+tok_SolveTSP.java: 6.578947368421052
+tok_ReadFile.java: 0.0
+tok_Assignment3.java: 0.0
+tok_sudokuBoard.java: 0.0
+tok_SudokuException.java: 0.0
+tok_SudokuAssignment.java: 0.0
+Percentage of Similarity: 46.05263157894737
+
+Analysis:
+tok_exampleC.cpp_3_3
+tok_GeneratePath.java: 20.0
+tok_SolverGUI.java: 10.0
+tok_TSPDistMatrix.java: 0.0
+tok_DeepCopy.java: 0.0
+tok_MutatePath.java: 0.0
+tok_PathPanel.java: 0.0
+tok_SolveTSP.java: 0.0
+tok_ReadFile.java: 0.0
+tok_Assignment3.java: 0.0
+tok_sudokuBoard.java: 0.0
+tok_SudokuException.java: 0.0
+tok_SudokuAssignment.java: 0.0
+Percentage of Similarity: 30.0
+
+Analysis:
+tok_part4.cpp_3_3
+tok_GeneratePath.java: 13.157894736842104
+tok_SolverGUI.java: 13.157894736842104
+tok_TSPDistMatrix.java: 0.0
+tok_DeepCopy.java: 0.0
+tok_MutatePath.java: 6.578947368421052
+tok_PathPanel.java: 0.0
+tok_SolveTSP.java: 0.0
+tok_ReadFile.java: 0.0
+tok_Assignment3.java: 0.0
+tok_sudokuBoard.java: 0.0
+tok_SudokuException.java: 0.0
+tok_SudokuAssignment.java: 0.0
+Percentage of Similarity: 32.89473684210527
+
+Analysis:
+tok_part5.cpp_3_3
+tok_GeneratePath.java: 5.555555555555555
+tok_SolverGUI.java: 16.666666666666668
+tok_TSPDistMatrix.java: 0.0
+tok_DeepCopy.java: 0.0
+tok_MutatePath.java: 0.0
+tok_PathPanel.java: 0.0
+tok_SolveTSP.java: 0.0
+tok_ReadFile.java: 0.0
+tok_Assignment3.java: 0.0
+tok_sudokuBoard.java: 0.0
+tok_SudokuException.java: 0.0
+tok_SudokuAssignment.java: 0.0
+Percentage of Similarity: 22.22222222222222
+
+Analysis:
+tok_lab2Submission.cpp_3_3
+tok_GeneratePath.java: 11.764705882352942
+tok_SolverGUI.java: 11.764705882352942
+tok_TSPDistMatrix.java: 0.0
+tok_DeepCopy.java: 0.0
+tok_MutatePath.java: 5.882352941176471
+tok_PathPanel.java: 0.0
+tok_SolveTSP.java: 5.882352941176471
+tok_ReadFile.java: 0.0
+tok_Assignment3.java: 0.0
+tok_sudokuBoard.java: 0.0
+tok_SudokuException.java: 0.0
+tok_SudokuAssignment.java: 0.0
+Percentage of Similarity: 35.294117647058826
+
+Algorithm Complete

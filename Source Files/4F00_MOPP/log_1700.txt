@@ -1,0 +1,174 @@
+Beginning Log
+File Path: /home/std/group/c4f00g01/public_html/process
+File ID: 1700
+
+Projects Detected: 
+0: 2p95_4_cp14lt_5660659
+1: 4p03_1_cp14lt_5660659
+2: 2p05_1_cp14lt_5660659
+
+Source Files Detected:
+2p95_4_cp14lt_5660659
+lab4b.cpp
+lab4.cpp
+lab4Sub.cpp
+lab4c.cpp
+
+Source Files Detected:
+4p03_1_cp14lt_5660659
+Question1.java
+Main.java
+Question2.java
+Question3.java
+Question3Task.java
+
+Source Files Detected:
+2p05_1_cp14lt_5660659
+sudokuBoard.java
+SudokuException.java
+SudokuAssignment.java
+
+
+Analysis:
+tok_lab4b.cpp_cp14lt_5660659
+tok_Question1.java: 16.304347826086957
+tok_Main.java: 0.0
+tok_Question2.java: 0.0
+tok_Question3.java: 0.0
+tok_Question3Task.java: 0.0
+tok_sudokuBoard.java: 0.0
+tok_SudokuException.java: 0.0
+tok_SudokuAssignment.java: 0.0
+Percentage of Similarity: 16.304347826086957
+
+Analysis:
+tok_lab4.cpp_cp14lt_5660659
+tok_Question1.java: 26.548672566371682
+tok_Main.java: 0.0
+tok_Question2.java: 0.0
+tok_Question3.java: 0.0
+tok_Question3Task.java: 0.0
+tok_sudokuBoard.java: 0.0
+tok_SudokuException.java: 0.0
+tok_SudokuAssignment.java: 0.0
+Percentage of Similarity: 26.548672566371685
+
+Analysis:
+tok_lab4Sub.cpp_cp14lt_5660659
+tok_Question1.java: 22.5
+tok_Main.java: 0.0
+tok_Question2.java: 0.0
+tok_Question3.java: 0.0
+tok_Question3Task.java: 0.0
+tok_sudokuBoard.java: 0.0
+tok_SudokuException.java: 0.0
+tok_SudokuAssignment.java: 0.0
+Percentage of Similarity: 22.5
+
+Analysis:
+tok_lab4c.cpp_cp14lt_5660659
+tok_Question1.java: 0.0
+tok_Main.java: 0.0
+tok_Question2.java: 0.0
+tok_Question3.java: 0.0
+tok_Question3Task.java: 0.0
+tok_sudokuBoard.java: 0.0
+tok_SudokuException.java: 0.0
+tok_SudokuAssignment.java: 0.0
+Percentage of Similarity: 0.0
+
+Analysis:
+tok_Question1.java_cp14lt_5660659
+tok_lab4b.cpp: 12.452107279693486
+tok_lab4.cpp: 2.8735632183908044
+tok_lab4Sub.cpp: 11.494252873563218
+tok_lab4c.cpp: 0.0
+tok_sudokuBoard.java: 20.114942528735632
+tok_SudokuException.java: 0.9578544061302682
+tok_SudokuAssignment.java: 15.32567049808429
+Percentage of Similarity: 63.2183908045977
+
+Analysis:
+tok_Main.java_cp14lt_5660659
+tok_lab4b.cpp: 13.043478260869565
+tok_lab4.cpp: 0.0
+tok_lab4Sub.cpp: 0.0
+tok_lab4c.cpp: 0.0
+tok_sudokuBoard.java: 17.391304347826086
+tok_SudokuException.java: 4.3478260869565215
+tok_SudokuAssignment.java: 4.3478260869565215
+Percentage of Similarity: 39.130434782608695
+
+Analysis:
+tok_Question2.java_cp14lt_5660659
+tok_lab4b.cpp: 13.542795232936077
+tok_lab4.cpp: 2.7085590465872156
+tok_lab4Sub.cpp: 9.750812567713977
+tok_lab4c.cpp: 0.0
+tok_sudokuBoard.java: 22.75189599133261
+tok_SudokuException.java: 0.5417118093174431
+tok_SudokuAssignment.java: 9.750812567713977
+Percentage of Similarity: 59.0465872156013
+
+Analysis:
+tok_Question3.java_cp14lt_5660659
+tok_lab4b.cpp: 14.285714285714286
+tok_lab4.cpp: 2.255639097744361
+tok_lab4Sub.cpp: 8.270676691729323
+tok_lab4c.cpp: 0.0
+tok_sudokuBoard.java: 19.548872180451127
+tok_SudokuException.java: 0.7518796992481203
+tok_SudokuAssignment.java: 13.533834586466165
+Percentage of Similarity: 58.64661654135338
+
+Analysis:
+tok_Question3Task.java_cp14lt_5660659
+tok_lab4b.cpp: 28.24858757062147
+tok_lab4.cpp: 0.0
+tok_lab4Sub.cpp: 0.0
+tok_lab4c.cpp: 0.0
+tok_sudokuBoard.java: 11.299435028248588
+tok_SudokuException.java: 2.824858757062147
+tok_SudokuAssignment.java: 0.0
+Percentage of Similarity: 42.3728813559322
+
+Analysis:
+tok_sudokuBoard.java_cp14lt_5660659
+tok_lab4b.cpp: 0.4170141784820684
+tok_lab4.cpp: 0.0
+tok_lab4Sub.cpp: 2.5020850708924103
+tok_lab4c.cpp: 0.0
+tok_Question1.java: 6.255212677231026
+tok_Main.java: 1.6680567139282736
+tok_Question2.java: 0.0
+tok_Question3.java: 0.0
+tok_Question3Task.java: 0.0
+Percentage of Similarity: 10.87866108786611
+
+Analysis:
+tok_SudokuException.java_cp14lt_5660659
+tok_lab4b.cpp: 0.0
+tok_lab4.cpp: 0.0
+tok_lab4Sub.cpp: 10.416666666666666
+tok_lab4c.cpp: 0.0
+tok_Question1.java: 10.416666666666666
+tok_Main.java: 0.0
+tok_Question2.java: 0.0
+tok_Question3.java: 0.0
+tok_Question3Task.java: 0.0
+Percentage of Similarity: 20.833333333333336
+
+Analysis:
+tok_SudokuAssignment.java_cp14lt_5660659
+tok_lab4b.cpp: 9.06344410876133
+tok_lab4.cpp: 0.0
+tok_lab4Sub.cpp: 6.042296072507553
+tok_lab4c.cpp: 0.0
+tok_Question1.java: 27.190332326283986
+tok_Main.java: 7.552870090634441
+tok_Question2.java: 3.7764350453172204
+tok_Question3.java: 1.5105740181268883
+tok_Question3Task.java: 0.0
+Percentage of Similarity: 55.135951661631424
+
+Algorithm Complete

@@ -1,0 +1,114 @@
+Beginning Log
+File Path: C:\Users\curti\eclipse-workspace\process
+File ID: 2168
+
+Projects Detected: 
+0: 4P80_AS2_v2
+1: Assignment2
+2: TestProgram
+
+Source Files Detected:
+4P80_AS2_v2
+Assignment2.java
+P1_Algorithm.java
+P1_PixelArray.java
+P1_PixelDisplayer.java
+P2_Algorithm.java
+P2_FileChooser.java
+P2_ImageDisplayer.java
+P2_ImgFrame.java
+
+Assignment2
+Q2_Viewer.java
+Question2.java
+
+TestProgram
+COSC4F00_StartAlgorithm.java
+
+
+tok_Assignment2.java
+tok_Q2_Viewer.java: 0.0
+tok_Question2.java: 7.246376811594203
+tok_COSC4F00_StartAlgorithm.java: 0.0
+Percentage of Similarity: 7.246376811594203
+
+tok_P1_Algorithm.java
+tok_Q2_Viewer.java: 0.0
+tok_Question2.java: 5.882352941176471
+tok_COSC4F00_StartAlgorithm.java: 0.0
+Percentage of Similarity: 5.88235294117647
+
+tok_P1_PixelArray.java
+tok_Q2_Viewer.java: 0.0
+tok_Question2.java: 0.0
+tok_COSC4F00_StartAlgorithm.java: 1.2953367875647668
+Percentage of Similarity: 1.2953367875647668
+
+tok_P1_PixelDisplayer.java
+tok_Q2_Viewer.java: 0.0
+tok_Question2.java: 0.9208103130755064
+tok_COSC4F00_StartAlgorithm.java: 0.9208103130755064
+Percentage of Similarity: 1.841620626151013
+
+tok_P2_Algorithm.java
+tok_Q2_Viewer.java: 0.0
+tok_Question2.java: 2.150537634408602
+tok_COSC4F00_StartAlgorithm.java: 2.150537634408602
+Percentage of Similarity: 4.301075268817205
+
+tok_P2_FileChooser.java
+tok_Q2_Viewer.java: 0.0
+tok_Question2.java: 0.0
+tok_COSC4F00_StartAlgorithm.java: 0.0
+Percentage of Similarity: 0.0
+
+tok_P2_ImageDisplayer.java
+tok_Q2_Viewer.java: 1.4306151645207439
+tok_Question2.java: 0.7153075822603719
+tok_COSC4F00_StartAlgorithm.java: 0.0
+Percentage of Similarity: 2.148997134670487
+
+tok_P2_ImgFrame.java
+tok_Q2_Viewer.java: 0.0
+tok_Question2.java: 0.0
+tok_COSC4F00_StartAlgorithm.java: 4.545454545454546
+Percentage of Similarity: 4.545454545454546
+
+tok_Q2_Viewer.java
+tok_Assignment2.java: 0.0
+tok_P1_Algorithm.java: 0.0
+tok_P1_PixelArray.java: 0.0
+tok_P1_PixelDisplayer.java: 0.0
+tok_P2_Algorithm.java: 0.0
+tok_P2_FileChooser.java: 0.0
+tok_P2_ImageDisplayer.java: 37.03703703703704
+tok_P2_ImgFrame.java: 0.0
+tok_COSC4F00_StartAlgorithm.java: 0.0
+Percentage of Similarity: 37.03703703703704
+
+tok_Question2.java
+tok_Assignment2.java: 47.61904761904762
+tok_P1_Algorithm.java: 0.0
+tok_P1_PixelArray.java: 0.0
+tok_P1_PixelDisplayer.java: 0.0
+tok_P2_Algorithm.java: 0.0
+tok_P2_FileChooser.java: 0.0
+tok_P2_ImageDisplayer.java: 0.0
+tok_P2_ImgFrame.java: 0.0
+tok_COSC4F00_StartAlgorithm.java: 0.0
+Percentage of Similarity: 47.61904761904761
+
+tok_COSC4F00_StartAlgorithm.java
+tok_Assignment2.java: 0.0
+tok_P1_Algorithm.java: 0.0
+tok_P1_PixelArray.java: 23.80952380952381
+tok_P1_PixelDisplayer.java: 0.0
+tok_P2_Algorithm.java: 23.80952380952381
+tok_P2_FileChooser.java: 0.0
+tok_P2_ImageDisplayer.java: 0.0
+tok_P2_ImgFrame.java: 0.0
+tok_Q2_Viewer.java: 0.0
+tok_Question2.java: 0.0
+Percentage of Similarity: 47.61904761904761
+
+Algorithm Complete
