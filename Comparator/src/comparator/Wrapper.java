@@ -1,7 +1,8 @@
 package comparator;
 
 import java.util.ArrayList;
-
+/*This class wraps the text of the file (tokens) to the name of the file and other relevant
+information*/
 public class Wrapper {
 	private ArrayList<Token> list;
 	private int index;
@@ -61,4 +62,4 @@ public class Wrapper {
 		l2 = s;
 	}
 
-}
+}//Wrapper

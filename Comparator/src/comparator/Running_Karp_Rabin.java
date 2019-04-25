@@ -1,5 +1,7 @@
 package comparator;
-
+/*This class performs the running karp rabing string matching.
+It does so by comparing all projects against all other projects to find the 
+largest areas of overlap.*/
 import java.util.StringTokenizer;
 import java.util.Hashtable;
 import java.util.ArrayList;
@@ -14,14 +16,14 @@ public class Running_Karp_Rabin {
 	private int tiles;
 	private PrintWriter scribe;
 	private Hashtable<String, Integer> values;
-	private static final int HASH_PRIME = 3;
-	private static final int MIN_MATCH_LENGTH=5;
+	private static final int HASH_PRIME = 3;//the prime for generating the hash for comparison
+	private static final int MIN_MATCH_LENGTH=5;//the minimum match length
 	private Hashtable<Long,LinkedList<Wrapper>>karpRabinHash;
-	private String file1name ="";
-	private String file2name = "";
+	private String file1name ="";//the first file being evaluated
+	private String file2name = "";//the second file being evaluated
 	private String file1start = "";
 	private String file2start = "";
-	private File[][] allFiles;
+	private File[][] allFiles;//array of all files
 	private int length;
 	private int numOfCollisions=0;//the number of collisions when the algorithm is run. This is tracked for performance reasons
 	ArrayList<Token> tokens1 = new ArrayList<>();
